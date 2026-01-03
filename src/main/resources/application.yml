@@ -1,0 +1,35 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/galip/scb-config-repo
+          default-label: master
+          clone-on-start: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,monitor,busrefresh
+
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+
+  health:
+    rabbit:
+      enabled: true
