@@ -23,7 +23,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,monitor,busrefresh
+        include: health,info,env,monitor
 
   endpoint:
     health:
